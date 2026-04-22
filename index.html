@@ -49,6 +49,8 @@ body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 /* ── NAV ───────────────────────────── */
@@ -598,8 +600,8 @@ nav {
   text-align: left; font-weight: 700;
 }
 .tax-table td.val {
-  font-family: var(--font-head); font-weight: 800;
-  color: var(--gold2); font-size: 17px;
+  font-family: var(--font-head); font-weight: 700;
+  color: var(--gold2); font-size: 14px;
 }
 .tax-table tbody tr:last-child td { border-bottom: none; }
 .tax-table tbody tr.highlight { background: rgba(201,162,39,0.04); }
@@ -679,21 +681,130 @@ footer {
   letter-spacing: 0.05em;
 }
 
-/* ── RESPONSIVE ────────────────────── */
-@media (max-width: 900px) {
+/* ── RESPONSIVE · Tablet ─────────────── */
+@media (max-width: 1024px) {
+  :root { --max: 100%; }
+  .section { padding: 70px 24px; }
+  .hero { padding: 0 24px 56px; }
+  .nav-inner { padding: 0 24px; }
+
+  /* Funding Leverage — 태블릿에서 2열 그리드로 */
+  .leverage-stack { display: grid !important; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .leverage-stack > div[style*="align-self:center"] { display: none !important; }
+
+  /* 앵커 3사 카드 3열 → 1열 */
+  .g3 { grid-template-columns: 1fr !important; }
+}
+
+/* ── RESPONSIVE · Mobile ─────────────── */
+@media (max-width: 768px) {
+  /* 기본 폰트 살짝 축소 */
+  body { font-size: 14px; }
+
+  /* 모든 다단 그리드 → 1열 */
   .g2, .g3, .g4, .g-12, .g-21, .flow-steps, .gp-team-grid, .opt-grid,
-  .country-grid, .hex-wrap, .hex-items, .footer-inner { grid-template-columns: 1fr; }
-  .hero { min-height: 80vh; }
-  .hero-title { font-size: 36px; }
-  .hero-stats { grid-template-columns: 1fr 1fr; }
-  .hero-stat:nth-child(2) { border-right: none; }
-  .hero-stat { padding: 16px 12px 0 0; margin-bottom: 12px; }
-  .nav-logo { font-size: 11px; margin-right: 16px; }
-  .nav-inner { padding: 0 20px; }
-  .section { padding: 60px 20px; }
-  .hex-wrap { padding: 24px 20px; }
-  .tax-table { font-size: 12px; }
-  .tax-table th, .tax-table td { padding: 10px 8px; }
+  .country-grid, .hex-wrap, .hex-items, .footer-inner { grid-template-columns: 1fr !important; }
+
+  /* 섹션 여백 축소 */
+  .section { padding: 48px 18px; }
+  .hero { padding: 0 18px 48px; min-height: 75vh; }
+
+  /* Hero */
+  .hero-title { font-size: 34px; }
+  .hero-sub { font-size: 15px; margin-bottom: 32px; }
+  .hero-stats { grid-template-columns: 1fr 1fr; gap: 0 16px; }
+  .hero-stat { padding: 14px 12px 0 0; margin-bottom: 10px; border-right: none; }
+  .hero-stat:nth-child(odd) { border-right: 1px solid var(--border); padding-right: 16px; }
+  .hero-stat-val { font-size: 20px; }
+  .scroll-hint { display: none; }
+
+  /* NAV */
+  .nav-inner { padding: 0 14px; }
+  .nav-logo { font-size: 10px; margin-right: 10px; }
+  .nav-link { padding: 12px 10px; font-size: 11px; }
+  .nav-link .num { display: none; }
+
+  /* 섹션 타이틀 */
+  .sec-title { font-size: 26px; }
+  .sec-desc { font-size: 14px; }
+
+  /* 카드 패딩 축소 */
+  .card { padding: 22px 18px; }
+  .card-title { font-size: 15px; }
+
+  /* Stat 블록 */
+  .stat-block { padding: 20px 16px; }
+  .stat-val { font-size: 26px; }
+
+  /* Funding Leverage — 모바일에서 세로 스택 */
+  .leverage-stack { display: flex !important; flex-direction: column !important; gap: 10px !important; }
+  .leverage-stack > div[style*="align-self:center"] {
+    display: block !important; align-self: center !important;
+    transform: rotate(90deg); margin: 0 !important;
+  }
+  .leverage-stack > div { min-width: 100% !important; flex: 1 1 100% !important; }
+
+  /* 검은색 레버리지 배경 박스 패딩 축소 */
+  .leverage-wrap { padding: 28px 20px !important; }
+  .leverage-wrap h3, .leverage-wrap > div > div[style*="font-size:28px"] {
+    font-size: 20px !important;
+  }
+
+  /* 앵커 카드 내부 meta 2x2 유지 */
+  .anchor-head { padding: 20px 20px 14px; }
+  .anchor-name { font-size: 20px; }
+  .anchor-body { padding: 16px 20px 12px; font-size: 12.5px; }
+  .anchor-meta { padding: 12px 20px 18px; }
+  .anchor-meta-value { font-size: 12px; }
+
+  /* 헥사곤 전략 박스 */
+  .hex-wrap { padding: 24px 18px !important; gap: 20px !important; }
+
+  /* GP 인물 카드 */
+  .gp-mem { padding: 18px 18px; }
+  .gp-mem-name { font-size: 18px; }
+
+  /* 글로벌 국가 카드 7열 → 2열 */
+  .country-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 8px; }
+  .country-card { padding: 12px 10px; }
+  .country-flag { font-size: 22px; }
+
+  /* 세제 테이블 — 가로 스크롤 */
+  .tax-table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .tax-table { font-size: 11px; min-width: 540px; }
+  .tax-table th, .tax-table td { padding: 8px 6px; }
+
+  /* Flow Steps (현재 미사용이지만 보수적으로) */
+  .flow-step-num { font-size: 28px; }
+  .flow-step-title { font-size: 13px; }
+
+  /* 미스릴 Case Study 4박스 */
+  .mithril-grid { grid-template-columns: 1fr 1fr !important; }
+
+  /* 소득공제 계산 가정 박스 */
+  .tax-assumption { flex-direction: column !important; font-size: 11px !important; }
+
+  /* 푸터 */
+  footer { padding: 36px 18px; }
+  .footer-inner { gap: 28px; }
+  .footer-bottom { flex-direction: column; gap: 8px; text-align: center; padding-top: 16px; }
+
+  /* Risk 박스 */
+  .risk-box { padding: 18px 20px; }
+  .risk-text { font-size: 11px; }
+}
+
+/* ── RESPONSIVE · Small Mobile ───────── */
+@media (max-width: 420px) {
+  .hero-title { font-size: 28px; }
+  .hero-stats { grid-template-columns: 1fr; }
+  .hero-stat { border-right: none !important; border-bottom: 1px solid var(--border); padding: 12px 0; }
+  .hero-stat:last-child { border-bottom: none; }
+  .sec-title { font-size: 22px; }
+  .stat-val { font-size: 22px; }
+  .anchor-meta { grid-template-columns: 1fr !important; }
+  .anchor-meta-item { display: flex; justify-content: space-between; padding: 6px 0; }
+  .country-grid { grid-template-columns: 1fr !important; }
 }
 </style>
 </head>
@@ -1134,7 +1245,7 @@ footer {
       </div>
     </div>
 
-    <div class="g4">
+    <div class="g4 mithril-grid">
       <div style="padding:14px;background:var(--card);border-radius:var(--r-md);border:1px solid var(--border)">
         <div style="font-size:10px;color:var(--muted);letter-spacing:0.1em;font-weight:600;margin-bottom:4px">SEED</div>
         <div style="font-family:var(--font-head);font-size:16px;font-weight:800;color:var(--text)">4억 투자</div>
@@ -1198,7 +1309,7 @@ footer {
     <div class="country-card">
       <div class="country-flag">🇦🇪</div>
       <div class="country-name">UAE/중동</div>
-      <div class="country-desc">아부다비 기름 제거 로봇 운영 · 중동 OI 프로그램</div>
+      <div class="country-desc">중동 OI 프로그램</div>
     </div>
   </div>
 </section>
@@ -1273,7 +1384,7 @@ footer {
   <div style="font-family:var(--font-mono);font-size:10px;font-weight:700;color:var(--muted);letter-spacing:0.12em;margin-bottom:14px">BATCH 기업당 · 단계별 TIPS 연계 자금 레버리지</div>
 
   <!-- 레버리지 다이어그램 -->
-  <div style="background:linear-gradient(135deg,#141E30,#1a2942);border-radius:var(--r-lg);padding:40px 36px;color:#fff;margin-bottom:28px;position:relative;overflow:hidden">
+  <div class="leverage-wrap" style="background:linear-gradient(135deg,#141E30,#1a2942);border-radius:var(--r-lg);padding:40px 36px;color:#fff;margin-bottom:28px;position:relative;overflow:hidden">
     <div style="position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(0,168,118,0.2),transparent 70%)"></div>
 
     <div style="position:relative;z-index:1">
@@ -1281,7 +1392,7 @@ footer {
       <div style="font-family:var(--font-head);font-size:28px;font-weight:800;color:#fff;letter-spacing:-0.02em;line-height:1.25;margin-bottom:36px">초기 <span style="color:#5B9BE8">TIPS</span> → 중후기 <span style="color:var(--g-green)">스케일업 TIPS</span> → 글로벌 <span style="color:var(--gold)">Global TIPS</span><br>투자금 대비 <span style="color:var(--g-green)">최대 78억</span>의 추가 R&D 자금 확보</div>
 
       <!-- 레버리지 Stack -->
-      <div style="display:flex;gap:12px;align-items:stretch;flex-wrap:wrap">
+      <div class="leverage-stack" style="display:flex;gap:12px;align-items:stretch;flex-wrap:wrap">
         <div style="flex:1;min-width:160px;padding:20px;background:rgba(26,95,212,0.15);border:1px solid rgba(26,95,212,0.4);border-radius:var(--r-md)">
           <div style="font-family:var(--font-mono);font-size:9px;font-weight:700;color:#5B9BE8;letter-spacing:0.12em;margin-bottom:8px">TIPS</div>
           <div style="font-family:var(--font-head);font-size:22px;font-weight:800;color:#fff;letter-spacing:-0.02em;line-height:1">8억</div>
@@ -1363,12 +1474,13 @@ footer {
       </div>
     </div>
 
+    <div class="tax-table-wrap">
     <table class="tax-table">
       <thead>
         <tr>
           <th>출자금액</th>
           <th>주목적 투자금<br>(×90%)</th>
-          <th>구간별 공제액</th>
+          <th>실제 소득공제 적용액</th>
           <th>예상 환급액<br>(세율 35%)</th>
           <th>실효 수익률</th>
         </tr>
@@ -1377,33 +1489,34 @@ footer {
         <tr>
           <td>3,000만 원</td>
           <td>2,700만 원</td>
-          <td>2,700만 원<br><span style="font-size:11px;color:var(--muted);font-weight:500">(2,700×100%)</span></td>
+          <td><strong style="color:var(--text);font-weight:800;font-size:15px">2,700만 원</strong><br><span style="font-size:11px;color:var(--muted);font-weight:500">(2,700×100%)</span></td>
           <td class="val">약 945만 원</td>
-          <td class="val">약 31.5%</td>
+          <td style="color:var(--muted);font-weight:500">약 31.5%</td>
         </tr>
         <tr class="highlight">
           <td>5,000만 원</td>
           <td>4,500만 원</td>
-          <td>4,050만 원<br><span style="font-size:11px;color:var(--muted);font-weight:500">(3,000×100% + 1,500×70%)</span></td>
+          <td><strong style="color:var(--text);font-weight:800;font-size:15px">4,050만 원</strong><br><span style="font-size:11px;color:var(--muted);font-weight:500">(3,000×100% + 1,500×70%)</span></td>
           <td class="val">약 1,418만 원</td>
-          <td class="val">약 28.4%</td>
+          <td style="color:var(--muted);font-weight:500">약 28.4%</td>
         </tr>
         <tr>
           <td>1억 원</td>
           <td>9,000만 원</td>
-          <td>5,600만 원<br><span style="font-size:11px;color:var(--muted);font-weight:500">(혼합 3구간 적용)</span></td>
+          <td><strong style="color:var(--text);font-weight:800;font-size:15px">5,600만 원</strong><br><span style="font-size:11px;color:var(--muted);font-weight:500">(혼합 3구간 적용)</span></td>
           <td class="val">약 1,960만 원</td>
-          <td class="val">약 19.6%</td>
+          <td style="color:var(--muted);font-weight:500">약 19.6%</td>
         </tr>
         <tr>
           <td>3억 원</td>
           <td>2억 7,000만 원</td>
-          <td>7,500만 원<br><span style="font-size:11px;color:var(--warn);font-weight:500">(50% 한도 상한 적용)</span></td>
+          <td><strong style="color:var(--text);font-weight:800;font-size:15px">7,500만 원</strong><br><span style="font-size:11px;color:var(--warn);font-weight:500">(50% 한도 상한 적용)</span></td>
           <td class="val">약 2,625만 원</td>
-          <td class="val">약 8.75%</td>
+          <td style="color:var(--muted);font-weight:500">약 8.75%</td>
         </tr>
       </tbody>
     </table>
+    </div>
     <div style="font-size:11px;color:var(--muted);line-height:1.7;margin-top:14px">
       ※ 본 시뮬레이션은 <strong>원본 개인투자조합 안내 자료 기준(주목적 투자비율 90%, 종합소득금액 1.5억 원·세율 35%)</strong>으로 작성된 <strong>보수적 예시</strong>입니다.
       실제 환급액은 조합의 국내 벤처기업 신주 투자비율, 출자자의 실제 과세표준·종합소득금액·기납부세액에 따라 달라집니다.
