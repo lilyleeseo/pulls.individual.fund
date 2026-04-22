@@ -492,21 +492,21 @@ nav {
 }
 
 /* ── COUNTRY GRID ──────────────────── */
-.country-grid { display: grid; grid-template-columns: repeat(5,1fr); gap: 10px; }
+.country-grid { display: grid; grid-template-columns: repeat(7,1fr); gap: 8px; }
 .country-card {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--r-md);
-  padding: 16px 14px;
+  padding: 14px 10px;
   text-align: center;
 }
-.country-flag { font-size: 28px; margin-bottom: 6px; }
+.country-flag { font-size: 24px; margin-bottom: 4px; }
 .country-name {
-  font-family: var(--font-head); font-size: 13px; font-weight: 700;
+  font-family: var(--font-head); font-size: 12px; font-weight: 700;
   color: var(--text); margin-bottom: 6px;
 }
 .country-desc {
-  font-size: 10.5px; color: var(--muted); line-height: 1.5;
+  font-size: 10px; color: var(--muted); line-height: 1.5;
 }
 
 /* ── OPTION CARDS ──────────────────── */
@@ -712,7 +712,7 @@ footer {
       <a href="#exec" class="nav-link active"><span class="num">01</span> 핵심 요약</a>
       <a href="#anchor" class="nav-link"><span class="num">02</span> 앵커 포트폴리오</a>
       <a href="#gp" class="nav-link"><span class="num">03</span> 운용사 역량</a>
-      <a href="#batch" class="nav-link"><span class="num">04</span> 스케일업 TIPS</a>
+      <a href="#batch" class="nav-link"><span class="num">04</span> TIPS · 스케일업</a>
       <a href="#subscription" class="nav-link"><span class="num">05</span> 세제 혜택</a>
     </div>
   </div>
@@ -732,7 +732,7 @@ footer {
     <p class="hero-sub">
       <strong style="color:var(--text)">2027~2028년 IPO 가시권의 Series A~Pre-IPO 단계</strong> 검증된 3개 기업과,
       그래비티벤처스가 2026년 딥테크 배치프로그램으로 발굴하는 스타트업 3~5개사에
-      <strong style="color:var(--text)">50:50</strong>으로 투자하는 개인투자조합입니다.
+      <strong style="color:var(--text)">균형 배분</strong>하는 개인투자조합입니다.
     </p>
 
     <div class="hero-stats">
@@ -788,13 +788,13 @@ footer {
 
       <div>
         <div style="display:flex;justify-content:space-between;font-size:11px;color:#9AA5B8;margin-bottom:6px;font-weight:600">
-          <span>ANCHOR (3사)</span><span>10억 · 50%</span>
+          <span>ANCHOR (3사 × 3억)</span><span>9억 · 50%</span>
         </div>
         <div style="height:10px;background:rgba(255,255,255,0.08);border-radius:99px;overflow:hidden;margin-bottom:16px">
           <div style="height:100%;width:50%;background:linear-gradient(90deg,#1A5FD4,#3d7ae0);border-radius:99px"></div>
         </div>
         <div style="display:flex;justify-content:space-between;font-size:11px;color:#9AA5B8;margin-bottom:6px;font-weight:600">
-          <span>BATCH (3~5사)</span><span>10억 · 50%</span>
+          <span>BATCH (3~5사 × 2~3억)</span><span>9억 · 50%</span>
         </div>
         <div style="height:10px;background:rgba(255,255,255,0.08);border-radius:99px;overflow:hidden">
           <div style="height:100%;width:50%;background:linear-gradient(90deg,#00A876,#3dc89a);border-radius:99px"></div>
@@ -804,7 +804,7 @@ footer {
       <div style="margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.08);display:grid;grid-template-columns:1fr 1fr;gap:14px">
         <div>
           <div style="font-size:10px;color:#9AA5B8;letter-spacing:0.1em;margin-bottom:4px">AVG. TICKET</div>
-          <div style="font-family:var(--font-head);font-size:16px;font-weight:700;color:#fff">2.5~3억</div>
+          <div style="font-family:var(--font-head);font-size:16px;font-weight:700;color:#fff">2~3억</div>
         </div>
         <div>
           <div style="font-size:10px;color:#9AA5B8;letter-spacing:0.1em;margin-bottom:4px">EXIT HORIZON</div>
@@ -822,7 +822,7 @@ footer {
       <div style="font-family:var(--font-mono);font-size:10px;font-weight:700;color:var(--g-green);letter-spacing:0.1em;margin-bottom:6px">01 · 안정성</div>
       <div style="font-family:var(--font-head);font-size:20px;font-weight:800;color:var(--text);letter-spacing:-0.02em;margin-bottom:12px;line-height:1.2">실패 없는 투자의<br>기준</div>
       <div style="font-size:12.5px;color:var(--muted);line-height:1.7">
-        2027년 <strong style="color:var(--text)">상장 가시권 앵커 3사</strong>에 10억 원 우선 배분.
+        <strong style="color:var(--text)">2027~2028 상장 가시권 앵커 3사</strong>에 9억 원 우선 배분.
         매출·수주·주관사 논의가 완료된 기업만 선별.
       </div>
     </div>
@@ -892,7 +892,7 @@ footer {
 <section id="anchor" class="section">
   <div class="sec-tag">02 Anchor Portfolio · 안정성</div>
   <h2 class="sec-title">앵커 <span class="accent">포트폴리오</span></h2>
-  <p class="sec-desc">매출, 확정 수주, 상장주관사 논의 셋 중 하나라도 진행 중이어야 앵커 자격이 주어집니다. 나머지 50%(10억)는 <strong style="color:var(--g-green)">초기기업 발굴에 집중해 투자수익을 극대화</strong>합니다.</p>
+  <p class="sec-desc">매출, 확정 수주, 상장주관사 논의 셋 중 하나라도 진행 중이어야 앵커 자격이 주어집니다. 나머지 50%(9억)는 <strong style="color:var(--g-green)">초기기업 발굴에 집중해 투자수익을 극대화</strong>합니다.</p>
 
   <div style="height:36px"></div>
 
@@ -1087,7 +1087,7 @@ footer {
       </div>
       <div class="hex-item">
         <div class="hex-item-num">05 · GLOBAL</div>
-        <div class="hex-item-title">5개국<br>자체 네트워크</div>
+        <div class="hex-item-title">7개 권역<br>자체 네트워크</div>
       </div>
       <div class="hex-item">
         <div class="hex-item-num">06 · IPO READINESS</div>
@@ -1162,33 +1162,43 @@ footer {
     </div>
   </div>
 
-  <!-- 글로벌 네트워크 5개국 -->
-  <div style="font-family:var(--font-mono);font-size:10px;font-weight:700;color:var(--muted);letter-spacing:0.12em;margin-bottom:14px">GLOBAL NETWORK · 5개국 직접 연결망</div>
+  <!-- 글로벌 네트워크 7개 권역 -->
+  <div style="font-family:var(--font-mono);font-size:10px;font-weight:700;color:var(--muted);letter-spacing:0.12em;margin-bottom:14px">GLOBAL NETWORK · 7개 권역 직접 연결망</div>
   <div class="country-grid">
     <div class="country-card">
       <div class="country-flag">🇲🇾</div>
       <div class="country-name">말레이시아</div>
-      <div class="country-desc">자회사 법인 · 국부펀드 파트너 · Penang 반도체 배치 프로그램</div>
+      <div class="country-desc">자회사 법인 · 국부펀드 파트너 · Penang 반도체 배치</div>
+    </div>
+    <div class="country-card">
+      <div class="country-flag">🇸🇬</div>
+      <div class="country-name">싱가포르</div>
+      <div class="country-desc">동남아 거점 · GBB 해캄 제거 PoC · 수출유망 육성</div>
     </div>
     <div class="country-card">
       <div class="country-flag">🇺🇸</div>
       <div class="country-name">미국</div>
-      <div class="country-desc">나스닥 IPO 사례 · 3M·Oracle·500 Startups 파트너</div>
+      <div class="country-desc">나스닥 IPO 사례 · 3M · Oracle · 500 Startups</div>
     </div>
     <div class="country-card">
       <div class="country-flag">🇨🇳</div>
       <div class="country-name">중국</div>
-      <div class="country-desc">CKGSB 파트너십 · "Dive into CHINA" 프로그램</div>
+      <div class="country-desc">CKGSB 파트너 · "Dive into CHINA" 프로그램</div>
     </div>
     <div class="country-card">
       <div class="country-flag">🇯🇵</div>
       <div class="country-name">일본</div>
-      <div class="country-desc">Toyota·SBI·Cool Japan Fund 투자 협업</div>
+      <div class="country-desc">Toyota · SBI · Cool Japan Fund 투자 협업</div>
     </div>
     <div class="country-card">
       <div class="country-flag">🇩🇪</div>
       <div class="country-name">독일/유럽</div>
       <div class="country-desc">BM-T 메인펀드 · Lufthansa OI</div>
+    </div>
+    <div class="country-card">
+      <div class="country-flag">🇦🇪</div>
+      <div class="country-name">UAE/중동</div>
+      <div class="country-desc">아부다비 기름 제거 로봇 운영 · 중동 OI 프로그램</div>
     </div>
   </div>
 </section>
@@ -1197,9 +1207,9 @@ footer {
 
 <!-- ══════════ 04 스케일업 TIPS ══════════ -->
 <section id="batch" class="section">
-  <div class="sec-tag">04 Leverage · 스케일업 TIPS</div>
-  <h2 class="sec-title">스케일업 <span class="accent">TIPS</span></h2>
-  <p class="sec-desc">조합 자산의 <strong style="color:var(--text)">나머지 50%(10억 원)</strong>는 그래비티벤처스의 <strong style="color:var(--text)">2026년 딥테크 배치프로그램 'Gravity Pulls'</strong>로 발굴되는 스타트업 3~5개사에 투자됩니다. 투자한 기업은 TIPS · 스케일업 TIPS · 글로벌 TIPS 연계로 투자금 대비 4~10배의 추가 R&D 자금 지원을 받게 됩니다.</p>
+  <div class="sec-tag">04 Leverage · TIPS · 스케일업 TIPS</div>
+  <h2 class="sec-title">TIPS · <span class="accent">스케일업 TIPS</span></h2>
+  <p class="sec-desc">조합 자산의 <strong style="color:var(--text)">나머지 50%(9억)</strong>는 그래비티벤처스의 <strong style="color:var(--text)">2026년 딥테크 배치프로그램 'Gravity Pulls'</strong>로 발굴되는 스타트업 3~5개사에 투자됩니다. 투자한 기업은 TIPS · 스케일업 TIPS · 글로벌 TIPS 연계로 투자금 대비 4~10배의 추가 R&D 자금 지원을 받게 됩니다.</p>
 
   <div style="height:36px"></div>
 
@@ -1207,7 +1217,7 @@ footer {
   <div style="background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;box-shadow:0 1px 4px rgba(10,30,80,0.05);margin-bottom:28px">
     <div style="padding:20px 24px 8px;border-bottom:1px solid var(--border)">
       <div style="font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Portfolio Allocation</div>
-      <div style="font-family:var(--font-head);font-size:20px;font-weight:800;color:var(--text);letter-spacing:-0.02em">총 20억 원 · <span style="color:var(--a-blue)">앵커 10억</span> + <span style="color:var(--g-green)">배치 10억</span> 균형 배분</div>
+      <div style="font-family:var(--font-head);font-size:20px;font-weight:800;color:var(--text);letter-spacing:-0.02em">총 20억 원 · <span style="color:var(--a-blue)">앵커 9억</span> + <span style="color:var(--g-green)">배치 9억</span> 균형 배분</div>
     </div>
     <div style="padding:28px 24px">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:18px">
@@ -1216,7 +1226,7 @@ footer {
           <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px">
             <div>
               <div style="font-family:var(--font-mono);font-size:10px;font-weight:700;color:var(--a-blue);letter-spacing:0.12em;margin-bottom:4px">ANCHOR · 50%</div>
-              <div style="font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--text);letter-spacing:-0.02em">검증된 3사 · 10억</div>
+              <div style="font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--text);letter-spacing:-0.02em">검증된 3사 · 9억</div>
             </div>
             <span class="badge badge-b">완료 검증</span>
           </div>
@@ -1233,13 +1243,13 @@ footer {
           <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px">
             <div>
               <div style="font-family:var(--font-mono);font-size:10px;font-weight:700;color:var(--g-green);letter-spacing:0.12em;margin-bottom:4px">BATCH · 50%</div>
-              <div style="font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--text);letter-spacing:-0.02em">선별된 3~5사 · 10억</div>
+              <div style="font-family:var(--font-head);font-size:22px;font-weight:800;color:var(--text);letter-spacing:-0.02em">선별된 3~5사 · 9억</div>
             </div>
             <span class="badge badge-g">R&D 매칭</span>
           </div>
           <div style="font-size:12.5px;color:var(--muted);line-height:1.7;padding-top:14px;border-top:1px solid rgba(0,168,118,0.15)">
             Gravity Pulls 1기 중 3~5사 선별<br>
-            <strong style="color:var(--text)">스케일업 TIPS 연계</strong> · 정부 R&D 매칭 확정<br>
+            <strong style="color:var(--text)">초기 TIPS · 중후기 스케일업 TIPS 연계</strong><br>
             <span style="color:var(--g-green);font-weight:600">↓ 본 섹션에서 상세 설명</span>
           </div>
         </div>
@@ -1252,23 +1262,23 @@ footer {
           <span>기업당 평균 티켓 약 2~3억 원 · 총 6~8개사 분산 (앵커 3 + 배치 3~5)</span>
         </div>
         <div style="height:14px;background:var(--bg2);border-radius:99px;overflow:hidden;display:flex">
-          <div style="width:50%;background:linear-gradient(90deg,#1A5FD4,#3d7ae0);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">앵커 10억 · 50%</div>
-          <div style="width:50%;background:linear-gradient(90deg,#00A876,#3dc89a);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">배치 10억 · 50%</div>
+          <div style="width:50%;background:linear-gradient(90deg,#1A5FD4,#3d7ae0);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">앵커 9억 · 50%</div>
+          <div style="width:50%;background:linear-gradient(90deg,#00A876,#3dc89a);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff">배치 9억 · 50%</div>
         </div>
       </div>
     </div>
   </div>
 
   <!-- 본격 배치 설명 시작 -->
-  <div style="font-family:var(--font-mono);font-size:10px;font-weight:700;color:var(--muted);letter-spacing:0.12em;margin-bottom:14px">BATCH 50% — 자금 레버리지 구조</div>
+  <div style="font-family:var(--font-mono);font-size:10px;font-weight:700;color:var(--muted);letter-spacing:0.12em;margin-bottom:14px">BATCH 기업당 · 단계별 TIPS 연계 자금 레버리지</div>
 
   <!-- 레버리지 다이어그램 -->
   <div style="background:linear-gradient(135deg,#141E30,#1a2942);border-radius:var(--r-lg);padding:40px 36px;color:#fff;margin-bottom:28px;position:relative;overflow:hidden">
     <div style="position:absolute;right:-60px;top:-60px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(0,168,118,0.2),transparent 70%)"></div>
 
     <div style="position:relative;z-index:1">
-      <div style="font-family:var(--font-mono);font-size:11px;font-weight:700;color:var(--g-green);letter-spacing:0.15em;margin-bottom:12px">FUNDING LEVERAGE · 선발 기업 1사당 최대 효과</div>
-      <div style="font-family:var(--font-head);font-size:28px;font-weight:800;color:#fff;letter-spacing:-0.02em;line-height:1.25;margin-bottom:36px">투자금 대비 <span style="color:var(--g-green)">최대 78억</span>의<br>추가 R&D 자금 지원으로 확장됩니다</div>
+      <div style="font-family:var(--font-mono);font-size:11px;font-weight:700;color:var(--g-green);letter-spacing:0.15em;margin-bottom:12px">FUNDING LEVERAGE · 단계별 TIPS 연계로 최대 확장</div>
+      <div style="font-family:var(--font-head);font-size:28px;font-weight:800;color:#fff;letter-spacing:-0.02em;line-height:1.25;margin-bottom:36px">초기 <span style="color:#5B9BE8">TIPS</span> → 중후기 <span style="color:var(--g-green)">스케일업 TIPS</span> → 글로벌 <span style="color:var(--gold)">Global TIPS</span><br>투자금 대비 <span style="color:var(--g-green)">최대 78억</span>의 추가 R&D 자금 확보</div>
 
       <!-- 레버리지 Stack -->
       <div style="display:flex;gap:12px;align-items:stretch;flex-wrap:wrap">
